@@ -1,0 +1,81 @@
+.root {
+    -fx-font-family: 'Segoe UI';
+    -fx-background-color: #f9f9f9;
+    -fx-padding: 20;
+}
+
+.label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+}
+
+.text-field {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 10;
+    -fx-padding: 8;
+    -fx-font-size: 14px;
+}
+
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+}
+
+.table-column {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.button {
+    -fx-background-color: #4caf50; /* Default color for 'Ajouter' button */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #388e3c; /* Darker green for hover state */
+}
+
+.button:pressed {
+    -fx-background-color: #2e7d32; /* Even darker green for pressed state */
+}
+
+.button.modify {
+    -fx-background-color: #ffc107; /* Color for 'Modifier' button */
+}
+
+.button.modify:hover {
+    -fx-background-color: #ffb300;
+}
+
+.button.modify:pressed {
+    -fx-background-color: #ffa000;
+}
+
+.button.export {
+    -fx-background-color: #2196f3; /* Color for 'Exporter en PDF' button */
+}
+
+.button.export:hover {
+    -fx-background-color: #1e88e5;
+}
+
+.button.export:pressed {
+    -fx-background-color: #1976d2;
+}
+
+.hbox {
+    -fx-alignment: center;
+    -fx-spacing: 15;
+}

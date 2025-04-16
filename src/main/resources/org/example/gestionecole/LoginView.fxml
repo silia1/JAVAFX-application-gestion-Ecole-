@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.gestionecole.controllers.LoginController"
+            stylesheets="@login.css"
+            prefWidth="1024" prefHeight="768">
+
+    <!-- Background with gradient -->
+    <StackPane AnchorPane.topAnchor="0.0"
+               AnchorPane.bottomAnchor="0.0"
+               AnchorPane.leftAnchor="0.0"
+               AnchorPane.rightAnchor="0.0"
+               styleClass="background">
+
+        <!-- Main Content Container -->
+        <HBox alignment="CENTER" maxWidth="1200" styleClass="main-container">
+            <!-- Left Panel -->
+            <VBox styleClass="left-panel" HBox.hgrow="ALWAYS" maxWidth="600">
+                <ImageView fx:id="loginImage"
+                           fitWidth="200"
+                           preserveRatio="true"
+                           styleClass="logo-image"/>
+
+            </VBox>
+
+            <!-- Right Panel -->
+            <VBox styleClass="right-panel" HBox.hgrow="ALWAYS" maxWidth="600">
+                <VBox styleClass="login-form">
+                    <Label text="Bienvenue dans votre espace"
+                           styleClass="form-title"/>
+
+                    <VBox spacing="15">
+                        <!-- Username Field -->
+                        <VBox spacing="5">
+                            <Label text="Username" styleClass="form-label"/>
+                            <TextField fx:id="usernameField"
+                                       promptText="Entrez votre nom d'utilisateur"
+                                       styleClass="form-input"/>
+                        </VBox>
+
+                        <!-- Password Field -->
+                        <VBox spacing="5">
+                            <Label text="Password" styleClass="form-label"/>
+                            <PasswordField fx:id="passwordField"
+                                           promptText="Entrez votre mot de passe"
+                                           styleClass="form-input"/>
+                        </VBox>
+
+                        <!-- Error Message -->
+                        <Label fx:id="errorLabel"
+                               text="Invalid username or password."
+                               visible="false"
+                               styleClass="error-message"/>
+
+                        <!-- Login Button -->
+                        <Button text="Login"
+                                fx:id="loginButton"
+                                onAction="#handleLogin"
+                                styleClass="login-button"/>
+
+                        <!-- Forgot Password -->
+                        <Hyperlink text="Mot de passe oublié?"
+                                   styleClass="forgot-password-link"/>
+                    </VBox>
+                </VBox>
+            </VBox>
+        </HBox>
+    </StackPane>
+</AnchorPane>

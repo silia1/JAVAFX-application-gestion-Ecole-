@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.gestionecole.controllers.SidebarController"
+      stylesheets="@sidebar.css"
+      styleClass="sidebar">
+
+    <!-- Sidebar Header -->
+    <Label fx:id="menuLabel" text="Bienvenue " styleClass="sidebar-header"/>
+
+    <!-- Navigation Items -->
+    <VBox spacing="0">
+        <HBox fx:id="dashboardRow" onMouseClicked="#navigateToDashboard" styleClass="sidebar-row">
+            <Label text="🏠" styleClass="sidebar-sticker dashboard"/> <!-- Sticker -->
+            <Label text="Tableau de bord" fx:id="dashboardButton" styleClass="sidebar-item"/>
+        </HBox>
+        <HBox fx:id="etudiantsRow" onMouseClicked="#navigateToEtudiants" styleClass="sidebar-row">
+            <Label text="👨‍🎓" styleClass="sidebar-sticker etudiants"/> <!-- Sticker -->
+            <Label text="Gestion des Étudiants" fx:id="etudiantsButton" styleClass="sidebar-item"/>
+        </HBox>
+        <HBox fx:id="professeursRow" onMouseClicked="#navigateToProfesseurs" styleClass="sidebar-row">
+            <Label text="📚" styleClass="sidebar-sticker professeurs"/> <!-- Sticker -->
+            <Label text="Gestion des Professeurs" fx:id="professeursButton" styleClass="sidebar-item"/>
+        </HBox>
+        <HBox fx:id="modulesRow" onMouseClicked="#navigateToModules" styleClass="sidebar-row">
+            <Label text="📝" styleClass="sidebar-sticker modules"/> <!-- Sticker -->
+            <Label text="Gestion des Modules" fx:id="modulesButton" styleClass="sidebar-item"/>
+        </HBox>
+        <HBox fx:id="inscriptionsRow" onMouseClicked="#navigateToInscriptions" styleClass="sidebar-row">
+            <Label text="📜" styleClass="sidebar-sticker inscriptions"/> <!-- Sticker -->
+            <Label text="Gestion des Inscriptions" fx:id="inscriptionsButton" styleClass="sidebar-item"/>
+        </HBox>
+        <HBox fx:id="professorModulesRow" onMouseClicked="#navigateToProfessorModules" styleClass="sidebar-row">
+            <Label text="📘" styleClass="sidebar-sticker modules"/> <!-- Sticker -->
+            <Label text="Mes Modules" fx:id="professorModulesButton" styleClass="sidebar-item"/>
+        </HBox>
+
+    </VBox>
+
+    <!-- Spacer -->
+    <Pane styleClass="sidebar-spacer"/>
+
+    <!-- Logout -->
+    <HBox onMouseClicked="#handleLogout" styleClass="sidebar-row">
+        <Label text="🚪" styleClass="sidebar-sticker logout"/> <!-- Sticker -->
+        <Label text="Déconnexion" fx:id="logoutButton" styleClass="sidebar-item logout"/>
+    </HBox>
+
+    <!-- Language Switch -->
+    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="sidebar-row">
+        <Label text="🌍" styleClass="sidebar-sticker language"/> <!-- Sticker -->
+        <Label onMouseClicked="#switchToEnglish" text="English" styleClass="sidebar-item language"/>
+        <Label onMouseClicked="#switchToFrench" text="Français" styleClass="sidebar-item language"/>
+    </HBox>
+</VBox>

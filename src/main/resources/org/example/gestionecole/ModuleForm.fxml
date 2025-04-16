@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="400.0" prefWidth="500.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="org.example.gestionecole.controllers.ModuleFormController" style="-fx-padding: 20;">
+    <!-- Title -->
+    <Label style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #007BFF;" text="Ajouter un Module" alignment="CENTER" />
+
+    <!-- Error Label -->
+    <Label fx:id="errorMessage" style="-fx-text-fill: red; -fx-font-size: 14px;" text="An error occurred." visible="false" />
+
+    <!-- Form Section -->
+    <GridPane hgap="10" vgap="15" style="-fx-padding: 10;">
+        <Label text="Nom Module:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="nomModuleField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Code Module:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="codeModuleField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Professeur:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="professeurField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <columnConstraints>
+            <ColumnConstraints percentWidth="30" />
+            <ColumnConstraints percentWidth="70" />
+        </columnConstraints>
+
+        <rowConstraints>
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="ALWAYS" />
+            <RowConstraints vgrow="ALWAYS" />
+        </rowConstraints>
+    </GridPane>
+
+    <!-- Buttons Section -->
+    <HBox alignment="center" spacing="20" style="-fx-padding: 10;">
+        <Button onAction="#handleSave" style="-fx-background-color: #4caf50; -fx-text-fill: white; -fx-background-radius: 5; -fx-min-width: 100px;" text="Enregistrer" />
+        <Button onAction="#handleCancel" style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-background-radius: 5; -fx-min-width: 100px;" text="Annuler" />
+    </HBox>
+</VBox>

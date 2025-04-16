@@ -1,0 +1,135 @@
+/* Root and Background */
+.background {
+    -fx-background-color: linear-gradient(to bottom right, #f0f4ff, #e6eeff);
+}
+
+/* Main Container */
+.main-container {
+    -fx-spacing: 20;
+    -fx-padding: 40;
+    -fx-alignment: center;
+    -fx-min-width: 800;
+}
+
+/* Left Panel */
+.left-panel {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-padding: 40;
+    -fx-alignment: center;
+    -fx-spacing: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);
+    -fx-min-height: 400;
+}
+
+.logo-image {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+}
+
+.school-name {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0052CC;
+}
+
+/* Right Panel */
+.right-panel {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-padding: 40;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);
+    -fx-min-height: 400;
+}
+
+/* Login Form */
+.login-form {
+    -fx-spacing: 25;
+    -fx-alignment: center;
+    -fx-max-width: 400;
+}
+
+/* Form Title */
+.form-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0052CC;
+    -fx-padding: 0 0 20 0;
+}
+
+/* Form Labels */
+.form-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #64748b;
+    -fx-font-weight: bold;
+}
+
+/* Input Fields */
+.form-input {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 8;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 12;
+    -fx-font-size: 14px;
+    -fx-max-width: 400;
+}
+
+.form-input:focused {
+    -fx-background-color: white;
+    -fx-border-color: #0052CC;
+    -fx-border-width: 2;
+}
+
+/* Login Button */
+.login-button {
+    -fx-background-color: #0052CC;
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 0;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,82,204,0.2), 8, 0, 0, 4);
+    -fx-max-width: 400;
+}
+
+.login-button:hover {
+    -fx-background-color: #0043a8;
+}
+
+.login-button:pressed {
+    -fx-background-color: #003785;
+    -fx-effect: dropshadow(gaussian, rgba(0,82,204,0.1), 4, 0, 0, 2);
+}
+
+/* Error Message */
+.error-message {
+    -fx-text-fill: #dc2626;
+    -fx-font-size: 14px;
+    -fx-padding: 8 0;
+}
+
+/* Forgot Password Link */
+.forgot-password-link {
+    -fx-text-fill: #0052CC;
+    -fx-font-size: 14px;
+    -fx-underline: false;
+    -fx-padding: 8 0;
+}
+
+.forgot-password-link:hover {
+    -fx-underline: true;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 800) {
+    .main-container {
+        -fx-padding: 20;
+    }
+
+    .left-panel, .right-panel {
+        -fx-padding: 20;
+    }
+}

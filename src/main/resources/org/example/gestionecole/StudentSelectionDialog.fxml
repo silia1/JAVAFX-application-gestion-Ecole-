@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+    <VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.gestionecole.controllers.StudentSelectionController">
+        <Label text="Select a Student to Enroll" />
+        <TableView fx:id="studentTable">
+            <columns>
+                <TableColumn fx:id="prenomColumn" text="First Name" />
+                <TableColumn fx:id="nomColumn" text="Last Name" />
+                <TableColumn fx:id="emailColumn" text="Email" />
+            </columns>
+        </TableView>
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button text="Select" onAction="#handleSelect" />
+            <Button text="Cancel" onAction="#handleCancel" />
+        </HBox>
+    </VBox>

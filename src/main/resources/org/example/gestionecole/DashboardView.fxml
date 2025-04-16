@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.gestionecole.controllers.DashboardController"
+            stylesheets="@dashboard.css"
+            prefWidth="1024" prefHeight="768">
+    <left>
+        <fx:include source="SidebarView.fxml"/>
+    </left>
+
+    <!-- Top Section -->
+    <top>
+        <HBox styleClass="header-bar">
+            <Label text="Tableau de Bord" styleClass="header-title"/>
+        </HBox>
+    </top>
+
+    <!-- Center Section -->
+    <center>
+        <GridPane hgap="20" vgap="20" styleClass="dashboard-grid" BorderPane.alignment="CENTER">
+            <VBox styleClass="stat-card" GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                <Label text="Total Étudiants" styleClass="card-title"/>
+                <Label fx:id="totalEtudiantsLabel" styleClass="card-value"/>
+            </VBox>
+
+            <VBox styleClass="stat-card" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                <Label text="Total Professeurs" styleClass="card-title"/>
+                <Label fx:id="totalProfesseursLabel" styleClass="card-value"/>
+            </VBox>
+
+            <VBox styleClass="stat-card" GridPane.rowIndex="0" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                <Label text="Total Modules" styleClass="card-title"/>
+                <Label fx:id="totalModulesLabel" styleClass="card-value"/>
+            </VBox>
+
+
+
+            <VBox styleClass="stat-card" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                <Label text="Répartition Statistique" styleClass="card-title"/>
+                <PieChart fx:id="statsPieChart" />
+            </VBox>
+        </GridPane>
+    </center>
+</BorderPane>

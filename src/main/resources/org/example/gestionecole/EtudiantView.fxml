@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="768" prefWidth="1024" style="-fx-background-color: #f9f9f9; -fx-font-family: 'Segoe UI'; -fx-padding: 20;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gestionecole.controllers.EtudiantController">
+    <left>
+        <fx:include source="SidebarView.fxml" />
+    </left>
+    <!-- Main content in the center -->
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20; -fx-alignment: center;">
+
+            <!-- Title -->
+            <Label prefHeight="60.0" prefWidth="306.0" style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #007BFF;" text="Gestion des Etudiants" />
+
+            <!-- Error Label -->
+            <Label fx:id="errorMessage" style="-fx-text-fill: red; -fx-font-size: 14px;" text="An error occurred." visible="false" />
+
+            <!-- Table -->
+            <TableView fx:id="etudiantTable" prefHeight="501.0" prefWidth="701.0" style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-border-radius: 10; -fx-background-radius: 10;">
+                <columns>
+                    <TableColumn fx:id="matriculeColumn" prefWidth="100" text="Matricule" />
+                    <TableColumn fx:id="nomColumn" prefWidth="100" text="Nom" />
+                    <TableColumn fx:id="prenomColumn" prefWidth="100" text="Prénom" />
+                    <TableColumn fx:id="dateNaissanceColumn" prefWidth="150" text="Date de Naissance" />
+                    <TableColumn fx:id="emailColumn" prefWidth="150" text="Email" />
+                    <TableColumn fx:id="promotionColumn" prefWidth="100" text="Promotion" />
+                </columns>
+            </TableView>
+
+            <!-- Buttons -->
+            <HBox spacing="20" style="-fx-alignment: center;">
+                <Button onAction="#handleAdd" style="-fx-background-color: #28A745; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 25px; -fx-padding: 10 30;" text="Ajouter" />
+                <Button onAction="#handleEdit" style="-fx-background-color: #FFC107; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 25px; -fx-padding: 10 30;" text="Modifier" />
+                <Button onAction="#handleExportPdf" style="-fx-background-color: #DC3545; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 25px; -fx-padding: 10 30;" text="Exporter en PDF" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

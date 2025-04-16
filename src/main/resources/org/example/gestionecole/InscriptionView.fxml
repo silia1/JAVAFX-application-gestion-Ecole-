@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="768" prefWidth="1024" style="-fx-background-color: #f9f9f9; -fx-font-family: 'Segoe UI'; -fx-padding: 20;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gestionecole.controllers.InscriptionController">
+    <left>
+        <fx:include source="SidebarView.fxml" />
+    </left>
+    <!-- Main content in the center -->
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20; -fx-alignment: center;">
+            <!-- Title -->
+            <Label style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #007BFF;" text="Gestion des Inscriptions" />
+
+            <!-- Error Label -->
+            <Label fx:id="cancelErrorLabel" style="-fx-text-fill: red; -fx-font-size: 14px;" text="" visible="false" />
+
+            <!-- Table -->
+            <TableView fx:id="inscriptionTable" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-border-radius: 10; -fx-background-radius: 10;">
+                <columns>
+                    <TableColumn fx:id="etudiantColumn" prefWidth="250.0" text="Étudiant" />
+                    <TableColumn fx:id="moduleColumn" prefWidth="250.0" text="Module" />
+                    <TableColumn fx:id="dateInscriptionColumn" prefWidth="200.0" text="Date Inscription" />
+                </columns>
+            </TableView>
+
+            <!-- Form Section -->
+            <GridPane hgap="20" vgap="10" style="-fx-padding: 10; -fx-alignment: center;">
+                <Label style="-fx-font-size: 16px; -fx-text-fill: #333;" text="Module:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <ComboBox fx:id="moduleComboBox" style="-fx-pref-width: 300px;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label fx:id="moduleErrorLabel" style="-fx-text-fill: red; -fx-font-size: 14px;" text="" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label style="-fx-font-size: 16px; -fx-text-fill: #333;" text="Étudiant:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <ComboBox fx:id="etudiantComboBox" style="-fx-pref-width: 300px;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label fx:id="etudiantErrorLabel" style="-fx-text-fill: red; -fx-font-size: 14px;" text="" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            </GridPane>
+
+            <!-- Buttons -->
+            <HBox spacing="20" style="-fx-alignment: center;">
+                <Button onAction="#handleEnroll" style="-fx-background-color: #28A745; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 25px; -fx-padding: 10 30;" text="Inscrire" />
+                <Button onAction="#handleCancel" style="-fx-background-color: #FFC107; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 25px; -fx-padding: 10 30;" text="Annuler" />
+                <Button onAction="#handleExportPdf" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 25px; -fx-padding: 10 30;" text="Exporter en PDF" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

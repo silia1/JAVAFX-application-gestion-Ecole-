@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.gestionecole.controllers.ProfesseurController"
+            style="-fx-background-color: #f4f6f9; -fx-padding: 20;"
+            prefWidth="1024" prefHeight="768">
+
+    <!-- Sidebar on the left -->
+    <left>
+        <fx:include source="SidebarView.fxml"/>
+    </left>
+
+    <!-- Main content in the center -->
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20; -fx-alignment: center;">
+
+            <!-- Title -->
+            <Label text="Gestion des Professeurs"
+                   style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #007BFF;"/>
+
+            <!-- Table -->
+            <TableView fx:id="professeurTable" prefHeight="500" prefWidth="800"
+                       style="-fx-background-color: white; -fx-border-color: #ddd; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                <columns>
+                    <TableColumn fx:id="nomColumn" text="Nom" prefWidth="260"/>
+                    <TableColumn fx:id="prenomColumn" text="Prénom" prefWidth="260"/>
+                    <TableColumn fx:id="specColumn" text="Spécialité" prefWidth="280"/>
+                </columns>
+            </TableView>
+
+
+            <!-- Form -->
+            <HBox spacing="20" style="-fx-padding: 20; -fx-background-color: #ffffff; -fx-border-color: #ddd; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                <TextField fx:id="txtNom" promptText="Nom" prefWidth="250"
+                           style="-fx-background-radius: 15px; -fx-border-radius: 15px; -fx-border-color: #ccc; -fx-padding: 10;"/>
+                <TextField fx:id="txtPrenom" promptText="Prénom" prefWidth="250"
+                           style="-fx-background-radius: 15px; -fx-border-radius: 15px; -fx-border-color: #ccc; -fx-padding: 10;"/>
+                <TextField fx:id="txtSpec" promptText="Spécialité" prefWidth="250"
+                           style="-fx-background-radius: 15px; -fx-border-radius: 15px; -fx-border-color: #ccc; -fx-padding: 10;"/>
+            </HBox>
+
+            <!-- Buttons -->
+            <HBox spacing="20" style="-fx-alignment: center;">
+                <Button text="Ajouter" onAction="#onAddProf"
+                        style="-fx-background-color: #28A745; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 25px; -fx-padding: 10 30;"/>
+                <Button text="Modifier" onAction="#onUpdateProf"
+                        style="-fx-background-color: #FFC107; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 25px; -fx-padding: 10 30;"/>
+                <Button text="Supprimer" onAction="#onDeleteProf"
+                        style="-fx-background-color: #DC3545; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 25px; -fx-padding: 10 30;"/>
+                <Button onAction="#handleExportProfesseurPdf" style="-fx-background-color: #DC3545; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 25px; -fx-padding: 10 30;" text="Exporter en PDF" />
+            </HBox>
+
+            <!-- Status -->
+            <Label fx:id="statusMessageLabel" style="-fx-font-size: 16px; -fx-text-fill: #555555; -fx-padding: 10;"/>
+            <Label fx:id="totalProfessorsLabel" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333333;"/>
+        </VBox>
+    </center>
+</BorderPane>

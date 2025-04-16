@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="768" prefWidth="1024" style="-fx-background-color: #f9f9f9; -fx-font-family: 'Segoe UI'; -fx-padding: 20;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.gestionecole.controllers.ModuleController">
+    <left>
+        <fx:include source="SidebarView.fxml" />
+    </left>
+    <!-- Main content in the center -->
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20; -fx-alignment: center;">
+
+            <!-- Error Label -->
+            <Label fx:id="errorMessage" style="-fx-text-fill: red; -fx-font-size: 14px;" text="An error occurred." visible="false" />
+            <!-- Title -->
+            <Label contentDisplay="TOP" style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #007BFF;" text="Gestion des Modules" />
+
+            <!-- Success Label -->
+            <Label fx:id="messageLabel" style="-fx-text-fill: green; -fx-font-size: 14px;" text="Success." visible="false" />
+
+            <!-- Table -->
+            <TableView fx:id="moduleTable" prefHeight="555.0" prefWidth="701.0" style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-width: 1; -fx-border-radius: 10; -fx-background-radius: 10;">
+                <columns>
+                    <TableColumn fx:id="nomModuleColumn" prefWidth="300" text="Nom Module" />
+                    <TableColumn fx:id="codeModuleColumn" prefWidth="150" text="Code Module" />
+                    <TableColumn fx:id="professeurColumn" prefWidth="300" text="Professeur" />
+                </columns>
+            </TableView>
+
+            <!-- Buttons -->
+            <HBox spacing="20" style="-fx-alignment: center;">
+                <Button onAction="#handleAdd" style="-fx-background-color: #28A745; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 25px; -fx-padding: 10 30;" text="Ajouter" />
+                <Button onAction="#handleEdit" style="-fx-background-color: #FFC107; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 25px; -fx-padding: 10 30;" text="Modifier" />
+                <Button onAction="#handleDelete" style="-fx-background-color: #DC3545; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 25px; -fx-padding: 10 30;" text="Supprimer" />
+                <Button onAction="#handleAssignProfessor" style="-fx-background-color: #007BFF; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 25px; -fx-padding: 10 30;" text="Assigner Professeur" />
+                <Button onAction="#handleEnrollUnassignedStudent" style="-fx-background-color: #17A2B8; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 25px; -fx-padding: 10 30;" text="Inscrire Étudiant" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

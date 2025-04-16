@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.gestionecole.controllers.ProfessorModulesController"
+            stylesheets="@professorModules.css">
+    <left>
+        <fx:include source="SidebarView.fxml"/>
+    </left>
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20; -fx-alignment: center;">
+            <Label text="Mes Modules"
+                   style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #007BFF;"/>
+            <!-- Table for Modules -->
+            <TableView fx:id="modulesTable" prefHeight="200" onMouseClicked="#onModuleSelected">
+                <columns>
+                    <TableColumn fx:id="moduleNameColumn" text="Nom du Module" prefWidth="200"/>
+                    <TableColumn fx:id="moduleCodeColumn" text="Code du Module" prefWidth="150"/>
+                </columns>
+            </TableView>
+
+            <!-- Table for Students -->
+            <TableView fx:id="studentsTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="studentNameColumn" text="Nom" prefWidth="200"/>
+                    <TableColumn fx:id="studentMatriculeColumn" text="Matricule" prefWidth="150"/>
+                    <TableColumn fx:id="studentEmailColumn" text="Email" prefWidth="200"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
